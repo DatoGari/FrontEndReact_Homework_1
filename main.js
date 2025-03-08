@@ -1,55 +1,20 @@
-// Task 1
+// task 1
 
-function equalityCheck(a,b) {
-    if (a === b) {
-        return "ტოლია"
-    }else{
-        return "არ არის ტოლი"
-    }
-}
+const users = [{name: 'Temo', age: 25}, 
+            {name: 'Lasha', age: 21},
+            {name: 'Ana', age: 28}]
 
-console.log(equalityCheck(5,5))
-console.log(equalityCheck(4,5))
 
-// Task 2
-
-function f2c(f) {
-    if (typeof f == "number"){
-        return (f-32)*5/9
-    }else{
-        return false
-    }
-    
-}
-
-console.log(f2c(86))
-console.log(f2c("86"))
-
-// Task 3
-
-function calculate(a,b,operation){
-    if (typeof a == "number" && typeof b == "number"){
-        switch (operation){
-            case "+":
-                return a + b
-                break
-            case "-":
-                return a - b
-                break                    
-            case "*":
-                return a * b
-                break
-            case "/":
-                return a / b
-                break
-            default:
-                return false    
+function youngestUser (users) {
+    let age = 999
+    let name = ""
+    for (let user of users) {
+        if (user.age < age){
+            age = user.age
+            name = user.name
         }
-    }else{
-        return false
     }
+    return name
 }
 
-console.log(calculate(3,5,"*"))
-console.log(calculate(4,"abc","*"))
-console.log(calculate(7,8,"haha"))
+console.log(youngestUser(users))
